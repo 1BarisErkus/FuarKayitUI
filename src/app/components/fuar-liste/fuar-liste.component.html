@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="card" style="margin-top: 50px;">
+            <div class="card-header">
+                <h3 style="display: inline-block;">Fuar Listesi</h3>
+                <input style="max-width: 200px; display: inline-block; margin-left: 70%;" placeholder="Ara" type="text" class="form-control" id="ara" [(ngModel)]="inputArama" (keyup)="FuarKayitAra(inputArama)">
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>FIRMA AD</th>
+                            <th>FUAR AD</th>
+                            <th>AÇIKLAMA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of fuarListe">
+                            <td>{{item.ID}}</td>
+                            <td>{{firma.FIRMA_AD}}</td>
+                            <td>{{item.FUAR_AD}}</td>
+                            <td>{{item.ACIKLAMA}}</td>
+                            <td><button class="btn btn-primary" (click)="ZiyaretciListeyeGit(item.ID)">Göster</button></td>
+                            <td><button class="btn btn-warning"
+                                    (click)="FuarKayitDegistirmeyeGit(item.ID)">Değiştir</button></td>
+                            <td><button class="btn btn-danger" (click)="FuarKayitSil(item.ID)">Sil</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <td><button class="btn btn-primary" (click)="FuarKayitEklemeyeGit()">Yeni Fuar Ekle</button></td>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="card" style="margin-top: 50px;">
+            <div class="card-header">
+                <h3 style="display: inline-block;">Ziyaretçi Listesi</h3>
+                <input style="max-width: 200px; display: inline-block; margin-left: 65%;" placeholder="Ara" type="text"
+                    class="form-control" [(ngModel)]="inputArama" (keyup)="ZiyaretciKayitAra(inputArama)">
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>FUAR ID</th>
+                            <th>ZİYARET TARİHİ</th>
+                            <th>ADI SOYADI</th>
+                            <th>EMAIL</th>
+                            <th>TELEFON</th>
+                            <th>FIRMA ADI</th>
+                            <th>AÇIKLAMA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of ziyaretciListe">
+                            <td>{{item.ID}}</td>
+                            <td>{{item.FUAR_ID}}</td>
+                            <td>{{item.ZIYARET_TARIH}}</td>
+                            <td>{{item.ZIYARETCI_AD_SOYAD}}</td>
+                            <td>{{item.EMAIL}}</td>
+                            <td>{{item.TELEFON}}</td>
+                            <td>{{item.FIRMA_AD}}</td>
+                            <td>{{item.ACIKLAMA}}</td>
+                            <td><button class="btn btn-warning"
+                                    (click)="ZiyaretciKayitDegistirmeyeGit(item.ID)">Değiştir</button></td>
+                            <td><button class="btn btn-danger" (click)="ZiyaretciKayitSil(item.ID)">Sil</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <td><button class="btn btn-primary" (click)="ZiyaretciKayitEklemeyeGit(0)">Yeni Ziyaretçi Ekle</button></td>
+            </div>
+        </div>
+    </div>
+</div>

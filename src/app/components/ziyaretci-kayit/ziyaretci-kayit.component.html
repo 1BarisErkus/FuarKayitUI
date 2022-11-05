@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="card" style="margin-top: 50px;">
+            <div class="card-header">
+                <h3>Ziyaretçi Kayit</h3>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="fgKayit" action="" class="col-12">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="ziyaret_tarihi">Ziyaret Tarihi</label>
+                        <input type="date" class="form-control" id="ziyaret_tarihi" formControlName="ziyaret_tarihi"
+                            maxlength="100">
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="ziyaretci_ad_soyad">Adı Soyadı</label>
+                        <input type="text" class="form-control" id="ziyaretci_ad_soyad" formControlName="ziyaretci_ad_soyad">
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="email">Email</label>
+                        <input type="text" class="form-control" id="email" formControlName="email"
+                            maxlength="100">
+
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="telefon">Telefon</label>
+                        <input type="text" class="form-control" id="telefon" formControlName="telefon"
+                            maxlength="100">
+
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="firma_adi">Firma Adı</label>
+                        <input type="text" class="form-control" id="firma_adi" formControlName="firma_adi"
+                            maxlength="100">
+
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="aciklama">Açıklama</label>
+                        <textarea class="form-control" id="aciklama" formControlName="aciklama"
+                            maxlength="100"></textarea>
+
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary" (click)="ZiyaretciKayitEkle_Guncelle()">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="card" style="margin-top: 50px;">
+            <div class="card-header">
+                <h3>Fuar Kayit</h3>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="fgKayit" action="" class="col-12">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="fuar_adi">Fuar Adı</label>
+                        <input type="text" class="form-control" id="fuar_adi" formControlName="fuar_adi"
+                            maxlength="100">
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="aciklama">Açıklama</label>
+                        <textarea class="form-control" id="aciklama" formControlName="aciklama"></textarea>
+
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary" (click)="FuarKayitEkle_Guncelle()">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
